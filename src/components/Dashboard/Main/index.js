@@ -2,16 +2,17 @@ import React from 'react';
 
 import * as Styles from './styles';
 
-const Main = ({ title, children }) => (
+const Main = ({ breadcrumb, children }) => (
   <Styles.Main className="bg-white">
 
     <Styles.Header className="border-bottom">
       <nav aria-label="breadcrumb">
-        <ol className="breadcrumb">
-          {/* <li className="fs-5 breadcrumb-item">
-              <a href="#">Home</a>
-            </li> */}
-          <li className="fs-5 breadcrumb-item active" aria-current="page">{title}</li>
+        <ol className="ms-3 breadcrumb">
+          {breadcrumb.map((item, index) => (
+            <li key={index} className="fs-5 breadcrumb-item">
+              <a href={item?.url}>{item?.name}</a>
+            </li>
+          ))}
         </ol>
       </nav>
     </Styles.Header>

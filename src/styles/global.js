@@ -4,7 +4,7 @@ import theme from './theme';
 const GlobalStyle = createGlobalStyle`
   ${() => css`
     :root {
-      --sidebar-width: ${theme.sidebarWidth.open};
+      --sidebar-width: ${theme.sidebarWidth.closed};
       --navbar-height: ${theme.navbarHeight};
       --control-bar-height: ${theme.controlBarHeight};
     }
@@ -18,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
     font: inherit;
     box-sizing: border-box;
     vertical-align: baseline;
-    outline:none;
+    outline: none;
+    user-select: none;
   }
 
   .layout {

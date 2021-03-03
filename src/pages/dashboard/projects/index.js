@@ -5,10 +5,13 @@ import ProjectsIcon from '../../../assets/icons/ProjectsIcon';
 import Dashboard from '../../../components/Dashboard';
 import Projects from '../../../components/Projects';
 
-const MyProjects = () => (
-  <Dashboard title="Meus Projetos" Icon={ProjectsIcon}>
-    <Projects />
-  </Dashboard>
-);
+const MyProjects = () => {
+  const breadcrumb = [{ name: 'Meus Projetos', url: null }];
+  return (
+    <Dashboard breadcrumb={breadcrumb} Icon={ProjectsIcon}>
+      <Projects />
+    </Dashboard>
+  );
+};
 
 export default MyProjects;

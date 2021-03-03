@@ -27,6 +27,6 @@ export const Header = styled.div`
 export const Container = styled.div`
   width: 100%;
   height: calc(100% - 56px);
-  padding: 32px;
+  padding: 16px 32px;
   overflow-y: auto;
 `;

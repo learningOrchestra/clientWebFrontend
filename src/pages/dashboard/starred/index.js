@@ -2,6 +2,9 @@ import React from 'react';
 
 import Dashboard from '../../../components/Dashboard';
 
-const MyProjects = () => <Dashboard title="Favoritos" />;
+const Starred = () => {
+  const breadcrumb = [{ name: 'Favoritos', url: null }];
+  return <Dashboard breadcrumb={breadcrumb} />;
+};
 
-export default MyProjects;
+export default Starred;

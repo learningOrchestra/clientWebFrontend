@@ -5,28 +5,20 @@ export const ControlBar = styled.nav`
     width: 100vw;
     height: var(--control-bar-height);
     display: flex;
+    align-items: center;
     background-color: ${theme.colors.background};
   `}
 `;
 
 export const Control = styled.div`
-  ${({ theme }) => css`
-    width: ${theme.sidebarWidth.open};
-    display: flex;
-    align-items: center;
-    margin: 16px 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  transition: width .5s;
 
-    &> .item-svg:hover {
-      background-color: #e9e8e7;
-    }
-
-    & > button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: max-content;
-      height: 32px;
-      margin-left: 8px;
-    }
-  `}
+  &:hover, & > .item-svg:hover {
+    background-color: #e9e8e7;
+  }
 `;

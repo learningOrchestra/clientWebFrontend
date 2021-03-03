@@ -24,10 +24,12 @@ const SingUp = () => {
       await signUp(name, email, password);
       router.push('/dashboard');
     } catch (error) {
-      const title = 'Algo não ocorreu como esperado';
-      const message = 'Verifique os seus dados e tente novamente.';
-      const type = 'error';
-      toast.show(title, message, type);
+      const options = {
+        title: 'Algo não ocorreu como esperado',
+        message: 'Verifique os seus dados e tente novamente.',
+        type: 'error',
+      };
+      toast.show(options);
     }
     setIsLoading(false);
   };

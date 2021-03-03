@@ -1,10 +1,13 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 
 import * as Styles from './styles';
 
 import SidebarGroupItem from './SidebarGroupItem';
 
 import { useToggleSidebarContext } from '../../../context/ToggleSidebar';
+import { useModalContext } from '../../../context/Modal';
+import { useUserContext } from '../../../context/User';
 
 const groups = [
   {
@@ -48,7 +51,28 @@ const groups = [
 ];
 
 const Sidebar = () => {
+  const router = useRouter();
+
   const { sidebarIsOpen } = useToggleSidebarContext();
+  const { handleShowAlert } = useModalContext();
+  const { updateUser } = useUserContext();
+
+  const handleLogout = () => {
+    updateUser(null);
+    router.push('/login');
+  };
+
+  const handleOpenAlert = () => {
+    const options = {
+      title: 'Sair',
+      message: 'Você deseja sair da aplicação?',
+      cancelText: 'Cancelar',
+      confirmText: 'Sair',
+      onClickConfirm: handleLogout,
+    };
+    handleShowAlert(options);
+  };
+
   return (
     <Styles.Sidebar>
 
@@ -63,8 +87,7 @@ const Sidebar = () => {
 
       <Styles.LogoutContainer
         className="item"
-        data-bs-toggle="modal"
-        data-bs-target="#logoutModal"
+        onClick={handleOpenAlert}
         aria-hidden="true"
       >
         <div className="item-container">

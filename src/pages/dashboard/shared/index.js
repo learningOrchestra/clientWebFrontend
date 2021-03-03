@@ -2,6 +2,9 @@ import React from 'react';
 
 import Dashboard from '../../../components/Dashboard';
 
-const Shared = () => <Dashboard title="Compartilhado comigo" />;
+const Shared = () => {
+  const breadcrumb = [{ name: 'Compartilhado comigo', url: null }];
+  return <Dashboard breadcrumb={breadcrumb} />;
+};
 
 export default Shared;

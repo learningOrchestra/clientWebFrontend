@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import ModalLogout from '../components/Modal/Logout';
-
 import { useAuthorizationContext } from '../context/Authorization';
 
 const Private = ({ children }) => {
@@ -41,7 +39,6 @@ const Private = ({ children }) => {
   return (
     <div className="layout">
       {children}
-      <ModalLogout />
     </div>
   );
 };

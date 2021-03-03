@@ -14,13 +14,21 @@ const Reset = () => {
   const toast = useToastContext();
 
   const handleChangePassword = ({ password, confirmPassword }) => {
-    console.log(password, confirmPassword);
-
-    const title = 'Senha alterada';
-    const message = 'Sua senha foi alterada. Por favor, faça login novamente.';
-    const type = 'success';
-    toast.show(title, message, type);
-
+    if (password === confirmPassword) {
+      const options = {
+        title: 'Senha não coincide',
+        message: 'As duas senhas devem ser exatamente iguais.',
+        type: 'error',
+      };
+      toast.show(options);
+      return;
+    }
+    const options = {
+      title: 'Senha alterada',
+      message: 'Sua senha foi alterada. Por favor, faça login novamente.',
+      type: 'success',
+    };
+    toast.show(options);
     router.push('/login');
   };
 

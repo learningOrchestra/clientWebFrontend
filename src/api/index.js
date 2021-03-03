@@ -5,23 +5,49 @@ const api = axios.create({ baseURL });
 
 export const GET = async (url, params = {}, token = '') => {
   const config = {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      Authorization: token,
-    },
+    url,
     params,
+    method: 'GET',
+    headers: { Authorization: token },
   };
-  const response = await api.get(url, config);
+
+  const response = await api.request(config);
   return response;
 };
 
 export const POST = async (url, data = {}, token = '') => {
   const config = {
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      Authorization: token,
-    },
+    url,
+    data,
+    method: 'POST',
+    headers: { Authorization: token },
   };
-  const response = await api.post(url, data, config);
+
+  const response = await api.request(config);
+  return response;
+};
+
+export const PUT = async (url, params = {}, data = {}, token = '') => {
+  const config = {
+    url,
+    params,
+    data,
+    method: 'PUT',
+    headers: { Authorization: token },
+  };
+
+  const response = await api.request(config);
+  return response;
+};
+
+export const DELETE = async (url, params = {}, token = '') => {
+  const config = {
+    url,
+    params,
+    method: 'DELETE',
+    headers: { Authorization: token },
+  };
+
+  const response = await api.request(config);
   return response;
 };

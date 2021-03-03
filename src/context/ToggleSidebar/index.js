@@ -4,7 +4,7 @@ import theme from '../../styles/theme';
 const ToggleSidebarContext = React.createContext();
 
 export const ToggleSidebarContextProvider = ({ children }) => {
-  const [sidebarIsOpen, setSidebarIsOpenOpen] = useState(true);
+  const [sidebarIsOpen, setSidebarIsOpenOpen] = useState(false);
 
   const handleToggleSidebar = () => {
     const { open, closed } = theme.sidebarWidth;

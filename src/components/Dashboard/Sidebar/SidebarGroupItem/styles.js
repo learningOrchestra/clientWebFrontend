@@ -2,23 +2,22 @@ import styled, { css } from 'styled-components';
 
 export const ItemsContainer = styled.div`
   position: relative;
-  width: 100%;
-  margin-top: 16px;
+  width: var(--sidebar-width);
+  transition: width .5s;
+  overflow: hidden;
 `;
 
 export const ItemContainer = styled.div`
   cursor: pointer;
-  width: var(--sidebar-width);
   height: 48px;
   display: flex;
   align-items: center;
-  transition: width .5s;
 
   & > .item-container {
-    width: 100%;
     height: 28px;
     display: flex;
     align-items: center;
+    transition: width .5s;
 
     & > p {
       margin: 0;

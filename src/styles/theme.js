@@ -16,7 +16,7 @@ export default {
     xxlarge: '32px',
   },
   sidebarWidth: {
-    open: '240px',
+    open: '196px',
     closed: '56px',
   },
   navbarHeight: '56px',
