@@ -23,6 +23,7 @@ const Login = () => {
     try {
       await signIn(email, password);
       router.push('/dashboard');
+      return;
     } catch (error) {
       const options = {
         title: 'Algo não ocorreu como esperado',

@@ -10,7 +10,7 @@ const ControlBar = () => {
   const { pathname } = useRouter();
 
   const { handleToggleSidebar } = useToggleSidebarContext();
-  const { handleShowAddProjectModal } = useModalContext();
+  const { handleShowAddProjectModal, handleShowAddDatasetModal } = useModalContext();
 
   const [currentPath, setCurrentPath] = useState('OTHER');
 
@@ -24,7 +24,7 @@ const ControlBar = () => {
 
   const handleNewProject = () => handleShowAddProjectModal();
   const handleNewWorkflow = () => console.log('Workflow');
-  const handleNewDataset = () => console.log('Dataset');
+  const handleNewDataset = () => handleShowAddDatasetModal();
 
   return (
     <Styles.ControlBar>

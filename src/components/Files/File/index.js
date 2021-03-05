@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 
 import * as Styles from './styles';
 
-import ProjectIcon from '../../../assets/icons/ProjectIcon';
+import DatasetIcon from '../../../assets/icons/DatasetIcon';
 
 import { usePopupMenuProjectContext } from '../../../context/PopupMenuProject';
 
@@ -20,11 +20,11 @@ const File = ({ file }) => {
       // onDoubleClick={handleOnDoubleClick}
     >
       <Styles.Body>
-        <ProjectIcon color={file.color} />
+        <DatasetIcon color="orange" />
       </Styles.Body>
       <Styles.Name className="border-top p-1">
-        <ProjectIcon color={file.color} />
-        <p className="p-0 m-0">{file.name}</p>
+        <DatasetIcon color="orange" />
+        <p className="p-0 m-0">{`${file.name}.${file.type}`}</p>
       </Styles.Name>
     </Styles.Folder>
   );

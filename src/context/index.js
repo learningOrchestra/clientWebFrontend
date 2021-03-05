@@ -4,6 +4,7 @@ import { AuthenticationContextProvider } from './Authentication';
 import { AuthorizationContextProvider } from './Authorization';
 import { PopupMenuProjectContextProvider } from './PopupMenuProject';
 import { ProjectsContextProvider } from './Projects';
+import { FilesContextProvider } from './Files';
 import { ToggleSidebarContextProvider } from './ToggleSidebar';
 import { ToastContextProvider } from './Toast';
 import { ModalContextProvider } from './Modal';
@@ -14,15 +15,17 @@ const ContextProvider = ({ children }) => (
     <AuthenticationContextProvider>
       <AuthorizationContextProvider>
         <ProjectsContextProvider>
-          <ToggleSidebarContextProvider>
-            <ToastContextProvider>
-              <ModalContextProvider>
-                <PopupMenuProjectContextProvider>
-                  {children}
-                </PopupMenuProjectContextProvider>
-              </ModalContextProvider>
-            </ToastContextProvider>
-          </ToggleSidebarContextProvider>
+          <FilesContextProvider>
+            <ToggleSidebarContextProvider>
+              <ToastContextProvider>
+                <ModalContextProvider>
+                  <PopupMenuProjectContextProvider>
+                    {children}
+                  </PopupMenuProjectContextProvider>
+                </ModalContextProvider>
+              </ToastContextProvider>
+            </ToggleSidebarContextProvider>
+          </FilesContextProvider>
         </ProjectsContextProvider>
       </AuthorizationContextProvider>
     </AuthenticationContextProvider>

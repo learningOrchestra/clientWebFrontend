@@ -15,9 +15,10 @@ export const GET = async (url, params = {}, token = '') => {
   return response;
 };
 
-export const POST = async (url, data = {}, token = '') => {
+export const POST = async (url, data = {}, token = '', params = {}) => {
   const config = {
     url,
+    params,
     data,
     method: 'POST',
     headers: { Authorization: token },
